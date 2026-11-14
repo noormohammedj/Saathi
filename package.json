@@ -1,0 +1,13 @@
+{
+  "name": "kindred",
+  "private": true,
+  "workspaces": ["apps/*", "packages/*"],
+  "scripts": {
+    "bootstrap": "bash scripts/bootstrap-mac.sh",
+    "scaffold": "bash scripts/scaffold.sh",
+    "mobile": "npm --workspace apps/mobile run start",
+    "ios": "npm --workspace apps/mobile run ios",
+    "android": "npm --workspace apps/mobile run android",
+    "web": "npm --workspace apps/web run dev"
+  }
+}

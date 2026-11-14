@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+:root {
+  --saffron: #e8761c;
+  --saffron-deep: #b85410;
+  --saffron-soft: #fde9d4;
+  --peacock: #0b6b78;
+  --peacock-deep: #074954;
+  --peacock-soft: #d6eef0;
+  --tulasi: #3d7a4c;
+  --tulasi-soft: #dcefd9;
+  --lotus: #d9577e;
+  --lotus-soft: #fadde6;
+  --gold: #c9952b;
+  --gold-soft: #f8eccb;
+  --ink: #2b1b10;
+  --ink-soft: #5e4a3b;
+  --muted: #8c7a6b;
+  --line: #eadfd2;
+  --sand: #fff6ea;
+  --card: #ffffff;
+}
+
+@theme inline {
+  --color-saffron: var(--saffron);
+  --color-saffron-deep: var(--saffron-deep);
+  --color-saffron-soft: var(--saffron-soft);
+  --color-peacock: var(--peacock);
+  --color-peacock-deep: var(--peacock-deep);
+  --color-peacock-soft: var(--peacock-soft);
+  --color-tulasi: var(--tulasi);
+  --color-tulasi-soft: var(--tulasi-soft);
+  --color-lotus: var(--lotus);
+  --color-lotus-soft: var(--lotus-soft);
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-sand: var(--sand);
+  --color-card: var(--card);
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-fraunces);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--sand);
+  color: var(--ink);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--saffron-soft);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

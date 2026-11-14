@@ -1,0 +1,271 @@
+import type { Circle, Reward, SevaFund, TempleEvent } from './types';
+
+// Facts below come from iskconcoimbatore.com (Nov 2026). Event dates and role
+// counts are prototype samples to be confirmed against the temple calendar.
+
+export const TEMPLE = {
+  name: 'ISKCON Coimbatore',
+  mandir: 'Sri Jagannath Mandir',
+  address: 'Hare Krishna Road, Civil Aerodrome PO, Coimbatore 641014',
+  phone: '+91 90422 16108',
+  email: 'iskcon.coimbatore@gmail.com',
+  coords: { latitude: 11.040434, longitude: 77.028456 },
+  deities: 'Sri Sri Jagannath, Baladeva, Subhadra & Sudarshan',
+  places: ['Harinam Mandapam (108 steps)', 'Goloka Gosala', 'Govinda’s Kitchen', 'Kovai Chandra site'],
+};
+
+export const ARATI_SCHEDULE = [
+  { time: '4:15 AM', name: 'Mangala Arati' },
+  { time: '4:30 AM', name: 'Narasimha Arati' },
+  { time: '4:45 AM', name: 'Tulasi Arati' },
+  { time: '5:00 AM', name: 'Sloka recitation' },
+  { time: '7:15 AM', name: 'Darshan Arati' },
+  { time: '7:30 AM', name: 'Guru Puja' },
+  { time: '8:00 AM', name: 'Srimad Bhagavatam class' },
+  { time: '12:30 PM', name: 'Madhya Arati' },
+  { time: '6:30 PM', name: 'Gaura Arati' },
+];
+
+export const EVENTS: TempleEvent[] = [
+  {
+    id: 'gita-jayanti',
+    title: 'Gita Jayanti Mahotsav',
+    subtitle: 'Sunrise Yoga & Gita · 700-verse chanting',
+    date: '2026-12-20',
+    time: '5:30 AM – 1:00 PM',
+    venue: 'Harinam Mandapam',
+    kind: 'festival',
+    gradient: ['#C9952B', '#B85410'],
+    description:
+      'Celebrate the day Lord Krishna spoke the Bhagavad Gita. A sunrise yoga session flows into a full recitation of all 700 verses, a Gita quiz for youth and book distribution.',
+    roles: [
+      { id: 'yoga', title: 'Lead sunrise yoga', skill: 'yoga', needed: 2, filled: 0, credits: 80 },
+      { id: 'outreach', title: 'Registration app & social reach', skill: 'tech', needed: 2, filled: 0, credits: 80 },
+      { id: 'digital', title: 'Live reels & stories', skill: 'digital', needed: 3, filled: 1, credits: 60 },
+      { id: 'gita', title: 'Verse recitation leads', skill: 'gita', needed: 6, filled: 4, credits: 60 },
+      { id: 'decor', title: 'Stage & kolam décor', skill: 'decor', needed: 4, filled: 1, credits: 50 },
+      { id: 'chant', title: 'Join 700-verse chanting', skill: 'chanting', needed: 200, filled: 86, credits: 30 },
+    ],
+    attendCredits: 25,
+    going: 342,
+  },
+  {
+    id: 'sunday-feast',
+    title: 'Sunday Love Feast',
+    subtitle: 'Kirtan · Discourse · Prasadam for all',
+    date: '2026-11-15',
+    time: '4:30 PM – 8:00 PM',
+    venue: 'Temple hall',
+    kind: 'weekly',
+    gradient: ['#E8761C', '#D9577E'],
+    description: 'The heart of the week: ecstatic kirtan, a Bhagavad Gita talk and a sumptuous feast, open to every visitor.',
+    roles: [
+      { id: 'kirtan', title: 'Kirtan band (mridanga, harmonium)', skill: 'music', needed: 5, filled: 3, credits: 40 },
+      { id: 'serve', title: 'Prasadam serving', skill: 'cooking', needed: 12, filled: 7, credits: 30 },
+      { id: 'folk', title: 'Kids’ story corner', skill: 'story', needed: 2, filled: 1, credits: 30 },
+      { id: 'welcome', title: 'Welcome desk for first-timers', skill: 'logistics', needed: 3, filled: 1, credits: 25 },
+    ],
+    attendCredits: 20,
+    going: 518,
+  },
+  {
+    id: 'vaikuntha',
+    title: 'Vaikuntha Ekadashi',
+    subtitle: 'Paramapada vasal darshan · all-night kirtan',
+    date: '2026-12-29',
+    time: '4:00 AM – 11:00 PM',
+    venue: 'Sri Jagannath Mandir',
+    kind: 'festival',
+    gradient: ['#074954', '#0B6B78'],
+    description: 'The biggest darshan day of the year in Coimbatore. Thousands pass through the Vaikuntha dwar; every pair of hands counts.',
+    roles: [
+      { id: 'queue', title: 'Queue & crowd care', skill: 'logistics', needed: 40, filled: 18, credits: 60 },
+      { id: 'khichdi', title: 'Ekadashi prasadam kitchen', skill: 'cooking', needed: 25, filled: 11, credits: 60 },
+      { id: 'firstaid', title: 'First-aid desk', skill: 'medical', needed: 4, filled: 1, credits: 70 },
+      { id: 'photo', title: 'Festival photography', skill: 'photo', needed: 3, filled: 1, credits: 50 },
+      { id: 'kirtan', title: 'All-night kirtan slots', skill: 'music', needed: 12, filled: 5, credits: 50 },
+    ],
+    attendCredits: 30,
+    going: 1240,
+  },
+  {
+    id: 'annadaan-sat',
+    title: 'Annadaan Saturday',
+    subtitle: 'Food for Life · cook and serve 500 plates',
+    date: '2026-11-21',
+    time: '7:00 AM – 1:00 PM',
+    venue: 'Govinda’s Kitchen',
+    kind: 'seva',
+    gradient: ['#3D7A4C', '#C9952B'],
+    description: 'Cook and serve sanctified meals for the community. No experience needed – the kitchen crew will guide you.',
+    roles: [
+      { id: 'cook', title: 'Cooking crew', skill: 'cooking', needed: 10, filled: 6, credits: 45 },
+      { id: 'serve', title: 'Serving & cleaning', skill: 'chanting', needed: 15, filled: 8, credits: 35 },
+    ],
+    attendCredits: 15,
+    going: 64,
+  },
+  {
+    id: 'kovai-chandra-day',
+    title: 'Kovai Chandra Brick Day',
+    subtitle: 'New temple site seva & donor walk',
+    date: '2026-12-06',
+    time: '8:00 AM – 12:00 PM',
+    venue: 'Kovai Chandra project site',
+    kind: 'outreach',
+    gradient: ['#B85410', '#2B1B10'],
+    description: 'Walk the new temple site, place a Golden Brick and help with the donor desk and the documentary film.',
+    roles: [
+      { id: 'film', title: 'Documentary crew', skill: 'photo', needed: 3, filled: 0, credits: 60 },
+      { id: 'desk', title: 'Donor desk & 80G receipts', skill: 'finance', needed: 3, filled: 1, credits: 50 },
+      { id: 'art', title: 'Paint the hoarding mural', skill: 'art', needed: 4, filled: 0, credits: 60 },
+    ],
+    attendCredits: 20,
+    going: 155,
+  },
+  {
+    id: 'harinam',
+    title: 'Harinam in RS Puram',
+    subtitle: 'Street kirtan · book distribution',
+    date: '2026-11-28',
+    time: '5:00 PM – 7:30 PM',
+    venue: 'DB Road, RS Puram',
+    kind: 'outreach',
+    gradient: ['#D9577E', '#0B6B78'],
+    description: 'Take the holy name to the streets. Sing, dance, smile and hand out Bhagavad Gitas.',
+    roles: [
+      { id: 'kirtan', title: 'Kirtan leads', skill: 'music', needed: 4, filled: 2, credits: 40 },
+      { id: 'chant', title: 'Chant & dance along', skill: 'chanting', needed: 30, filled: 12, credits: 25 },
+      { id: 'books', title: 'Gita distribution', skill: 'gita', needed: 6, filled: 2, credits: 35 },
+    ],
+    attendCredits: 15,
+    going: 48,
+  },
+];
+
+export const CIRCLES: Circle[] = [
+  { id: 'japa-sunrise', name: 'Japa Sunrise Club', tagline: 'Chant together after Mangala Arati – no skill needed', skill: 'chanting', members: 214, leadId: 'venkat', nextMeet: 'Daily · 5:15 AM', gradient: ['#3D7A4C', '#0B6B78'], openToAll: true },
+  { id: 'seva-tech', name: 'Seva Tech Guild', tagline: 'Builders shipping apps & sites for the temple', skill: 'tech', members: 18, leadId: 'sukoon', nextMeet: 'Sat · 7:00 PM', gradient: ['#074954', '#0B6B78'], openToAll: false },
+  { id: 'yoga-bhakti', name: 'Yoga for Bhakti', tagline: 'Asana, breath and the holy name', skill: 'yoga', members: 96, leadId: 'rupika', nextMeet: 'Sun · 6:00 AM', gradient: ['#D9577E', '#E8761C'], openToAll: true },
+  { id: 'kirtan-mandali', name: 'Kirtan Mandali', tagline: 'Mridanga, kartals, harmonium – jam for Krishna', skill: 'music', members: 42, leadId: 'govind', nextMeet: 'Sat · 5:00 PM', gradient: ['#E8761C', '#C9952B'], openToAll: true },
+  { id: 'gita-circle', name: 'Thursday Gita Circle', tagline: 'One chapter a week, in Tamil & English', skill: 'gita', members: 48, leadId: 'hari', nextMeet: 'Thu · 7:00 PM', gradient: ['#C9952B', '#B85410'], openToAll: true },
+  { id: 'folk-stories', name: 'Folk Storytellers', tagline: 'Krishna stories for the Folk kids programme', skill: 'story', members: 15, leadId: 'lalitha', nextMeet: 'Sun · 5:00 PM', gradient: ['#0B6B78', '#D9577E'], openToAll: false },
+  { id: 'rangoli-decor', name: 'Kolam & Décor Collective', tagline: 'Festival kolams, garlands and stage art', skill: 'decor', members: 27, leadId: 'meera', nextMeet: 'Fri · 4:30 AM', gradient: ['#D9577E', '#7B4BA8'], openToAll: true },
+  { id: 'govinda-kitchen', name: 'Govinda’s Kitchen Crew', tagline: 'Annadaan cooks and servers', skill: 'cooking', members: 63, leadId: 'priya', nextMeet: 'Sat · 7:00 AM', gradient: ['#E8761C', '#D9577E'], openToAll: true },
+  { id: 'lens-krishna', name: 'Lens for Krishna', tagline: 'Photographers & filmmakers', skill: 'photo', members: 11, leadId: 'karthik', nextMeet: 'Festival days', gradient: ['#074954', '#2B1B10'], openToAll: false },
+];
+
+/** Donation funds and tiers exactly as listed on iskconcoimbatore.com/donate. */
+export const SEVA_FUNDS: SevaFund[] = [
+  {
+    id: 'annadaan',
+    name: 'Annadaan Seva',
+    tagline: 'Feed devotees and visitors',
+    description: 'Food for Life: sanctified meals cooked in Govinda’s Kitchen and served to all who come.',
+    icon: 'soup',
+    gradient: ['#E8761C', '#C9952B'],
+    tiers: [
+      { id: 'a25', label: '25 plates', amount: 1000 },
+      { id: 'a50', label: '50 plates', amount: 2000 },
+      { id: 'a125', label: '125 plates', amount: 5000 },
+      { id: 'a250', label: '250 plates', amount: 10000 },
+      { id: 'aany', label: 'Any amount', amount: null },
+    ],
+  },
+  {
+    id: 'kovai-chandra',
+    name: 'Kovai Chandra Temple',
+    tagline: 'Build the new temple, brick by brick',
+    description: 'The new Sri Jagannath temple for Coimbatore. Place a golden brick, sponsor a square foot or a pillar.',
+    icon: 'landmark',
+    gradient: ['#B85410', '#2B1B10'],
+    tiers: [
+      { id: 'sudhama', label: 'Sudhama Seva (monthly)', amount: 1530, note: '≈ ₹51 a day' },
+      { id: 'brick1', label: '1 Golden Brick', amount: 1108 },
+      { id: 'brick5', label: '5 Golden Bricks', amount: 5108 },
+      { id: 'brick10', label: '10 Golden Bricks', amount: 10108 },
+      { id: 'sqft', label: '1 sq. ft.', amount: 6500 },
+      { id: 'patron', label: 'Kovai Chandra Patron', amount: 100108 },
+      { id: 'pillar-s', label: 'Small pillar', amount: 500000 },
+      { id: 'pillar-m', label: 'Medium pillar', amount: 1000000 },
+    ],
+  },
+  {
+    id: 'gau-seva',
+    name: 'Gau Seva',
+    tagline: 'Care for the cows of Goloka Gosala',
+    description: '20+ cows live at the temple gosala. Feed them for a day or adopt one for a year.',
+    icon: 'heart-handshake',
+    gradient: ['#3D7A4C', '#0B6B78'],
+    tiers: [
+      { id: 'grass', label: '2 trolleys green grass', amount: 500 },
+      { id: 'dry', label: 'Dried fodder', amount: 1200 },
+      { id: 'feed10', label: 'Feed 10 cows', amount: 2000 },
+      { id: 'feed20', label: 'Feed 20 cows', amount: 4000 },
+      { id: 'feed30', label: 'Feed 30 cows', amount: 5000 },
+      { id: 'bran', label: 'Wheat bran (650 kg)', amount: 9000 },
+      { id: 'adopt1', label: 'Adopt a cow · 1 month', amount: 10000 },
+      { id: 'adopt12', label: 'Adopt a cow · 12 months', amount: 100000 },
+    ],
+  },
+  {
+    id: 'vidya-daan',
+    name: 'Vidya Daan',
+    tagline: 'Gift the Bhagavad Gita',
+    description: 'Free Bhagavad-gita As It Is for orphanages, hospitals, old-age homes, prisons and police, and discounted copies for students.',
+    icon: 'book-open',
+    gradient: ['#C9952B', '#B85410'],
+    tiers: [
+      { id: 'g11', label: '11 Bhagavad Gitas', amount: 3500 },
+      { id: 'g21', label: '21 Bhagavad Gitas', amount: 6500 },
+      { id: 'g51', label: '51 Bhagavad Gitas', amount: 15500 },
+      { id: 'sb1', label: '1 Srimad Bhagavatam set', amount: 9000 },
+      { id: 'sb5', label: '5 Srimad Bhagavatam sets', amount: 45000 },
+    ],
+  },
+  {
+    id: 'vaishnav-bhojan',
+    name: 'Vaishnav Bhojan',
+    tagline: 'Feed the temple devotees',
+    description: 'Sponsor a day’s meals for the full-time devotees who serve the temple.',
+    icon: 'utensils',
+    gradient: ['#D9577E', '#E8761C'],
+    tiers: [
+      { id: 'v10', label: '10 Vaishnavas · 1 day', amount: 2000 },
+      { id: 'v20', label: '20 Vaishnavas · 1 day', amount: 5000 },
+      { id: 'v50', label: '50 Vaishnavas · 1 day', amount: 10000 },
+      { id: 'v100', label: '100 Vaishnavas · 1 day', amount: 20000 },
+    ],
+  },
+];
+
+export const REWARDS: Reward[] = [
+  { id: 'laddu', name: 'Laddu prasadam', description: 'Collect at the prasadam counter', cost: 60, icon: 'cookie', category: 'prasadam' },
+  { id: 'govinda-meal', name: 'Govinda’s thali', description: 'A full meal at Govinda’s Kitchen', cost: 150, icon: 'utensils', category: 'prasadam' },
+  { id: 'archana', name: 'Archana in your name', description: 'Offered to Sri Jagannath on a day you choose', cost: 250, icon: 'flame', category: 'puja' },
+  { id: 'maha-box', name: 'Maha prasadam box', description: 'Festival sweets offered to the deities', cost: 300, icon: 'gift', category: 'prasadam' },
+  { id: 'gita-book', name: 'Bhagavad-gita As It Is', description: 'Hardbound, Tamil or English', cost: 400, icon: 'book-open', category: 'gift' },
+  { id: 'mala', name: 'Tulasi japa mala', description: '108 beads with bead bag', cost: 450, icon: 'circle-dot', category: 'gift' },
+  { id: 'priority-vaikuntha', name: 'Priority darshan pass', description: 'Vaikuntha Ekadashi · dedicated queue for you + 1', cost: 900, icon: 'ticket', category: 'darshan', limited: '120 left' },
+  { id: 'priority-janma', name: 'Janmashtami midnight pass', description: 'Reserved seating for the midnight abhishek', cost: 1200, icon: 'moon-star', category: 'darshan', limited: 'Opens Jul 2027' },
+];
+
+/** How sadhana and seva turn into credits. Admins can tune these in production. */
+export const CREDIT_RULES = [
+  { id: 'visit', label: 'Temple visit (geo + QR check-in)', points: 10, cap: 'once a day' },
+  { id: 'program', label: 'Attend a programme or festival', points: 20, cap: 'per programme' },
+  { id: 'japa', label: 'Chant 16 rounds', points: 16, cap: '1 per round, daily' },
+  { id: 'gita', label: 'Read a Gita chapter', points: 8, cap: 'up to 2 a day' },
+  { id: 'lecture', label: 'Hear a 30-min lecture', points: 6, cap: 'up to 2 a day' },
+  { id: 'seva', label: 'Volunteer seva', points: 40, cap: 'per verified shift' },
+  { id: 'streak7', label: '7-day sadhana streak', points: 50, cap: 'bonus' },
+  { id: 'streak30', label: '30-day sadhana streak', points: 250, cap: 'bonus' },
+  { id: 'donation', label: 'Seva donation', points: 1, cap: 'per ₹100, max 500' },
+];
+
+export const TIERS = [
+  { name: 'Sevak', min: 0, color: '#3D7A4C' },
+  { name: 'Bhakta', min: 500, color: '#0B6B78' },
+  { name: 'Saathi', min: 1500, color: '#C9952B' },
+  { name: 'Sankirtan Hero', min: 4000, color: '#B85410' },
+];

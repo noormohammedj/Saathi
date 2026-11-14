@@ -1,0 +1,120 @@
+[
+  {
+    "id": "00",
+    "eyebrow": "A proposal for ISKCON Coimbatore",
+    "title": "Saathi: your seva companion",
+    "body": "Turning temple visitors into a committed community of devotees who serve together.",
+    "say": "Hare Krishna. This is Saathi, a proposal for ISKCON Coimbatore. Saathi helps visitors come back regularly, take up the bhakti process, and offer their skills in seva, together."
+  },
+  {
+    "id": "01",
+    "image": "00-welcome.jpg",
+    "eyebrow": "Welcome",
+    "title": "Every visitor has a gift",
+    "body": "Find your Saathis, offer your seva, and grow in bhakti, all in one app for iPhone and Android.",
+    "say": "Every visitor has a gift. Saathi makes three promises: find devotees whose skills complete yours, offer your seva at the temple, and grow in bhakti with streaks and credits."
+  },
+  {
+    "id": "02",
+    "image": "01-skills.jpg",
+    "eyebrow": "Onboarding",
+    "title": "Pick how you love to serve",
+    "body": "Fifteen seva skills, from app building to prasadam cooking. No special skill? Chanting and japa count just as much.",
+    "say": "New devotees pick how they would love to serve. There are fifteen skills, from technology and music to cooking and decoration. Someone without a special skill simply chooses chanting. Their phone number and email stay private, visible only to temple admins."
+  },
+  {
+    "id": "03",
+    "image": "02-discover.jpg",
+    "eyebrow": "Saathis",
+    "title": "Skill-matched devotees",
+    "body": "Swipe right to connect, left for later, or up to invite to seva. Every card explains its seva-match score.",
+    "say": "The Saathis tab shows devotees who complement your skills. Here, Noor, an app entrepreneur, sees Rupika, a yoga coach with the temple since two thousand. The card explains why: Gita Jayanti needs both of them. Swipe right to connect, left for later, or up to send a seva invite."
+  },
+  {
+    "id": "04",
+    "image": "04-match.jpg",
+    "eyebrow": "It's a match",
+    "title": "You're Saathis",
+    "body": "When both connect, Saathi shows which festival needs them together and offers to form a seva team.",
+    "say": "When both devotees connect, it's a Saathi match. The app shows which festival needs them together, the roles they can fill, and offers to form a seva team in one tap. They have twenty-four hours to send the first Hare Krishna."
+  },
+  {
+    "id": "05",
+    "image": "05-team-chat.jpg",
+    "eyebrow": "Seva teams",
+    "title": "Plan the seva together",
+    "body": "Private in-app chat. Temple coordinators are notified when a team forms; contact details are never shared.",
+    "say": "The team gets a private chat to plan their seva. Temple coordinators are notified automatically, and nobody's phone number is ever shared."
+  },
+  {
+    "id": "06",
+    "image": "06-sadhana.jpg",
+    "eyebrow": "Daily sadhana",
+    "title": "A practice you can see",
+    "body": "A 108-bead japa counter, streaks with a 30-day bonus, Gita and lecture tracking, and today's arati times.",
+    "say": "The Sadhana tab builds a daily habit. A hundred and eight bead japa counter tracks rounds toward sixteen. Reading the Gita, hearing a lecture and visiting the temple all count toward a streak, with a bonus at thirty days."
+  },
+  {
+    "id": "07",
+    "image": "07-seva.jpg",
+    "eyebrow": "Offer your seva",
+    "title": "Roles that need you",
+    "body": "Featured festivals, roles matched to your skills, and every upcoming programme at the temple.",
+    "say": "The Seva tab lists every upcoming programme, from the Sunday Love Feast to Vaikuntha Ekadashi, and highlights the roles that need your particular skills, with the credits each one earns."
+  },
+  {
+    "id": "08",
+    "image": "08-event.jpg",
+    "eyebrow": "Festival roles",
+    "title": "Volunteer in one tap",
+    "body": "Live staffing for every role, one-tap volunteering, and seva teams formed from matched devotees.",
+    "say": "Each festival shows its roles with live staffing. Devotees volunteer in one tap, or form a team with matched Saathis, so festivals are staffed weeks in advance instead of on the day."
+  },
+  {
+    "id": "09",
+    "image": "10-annadaan.jpg",
+    "eyebrow": "Donate & sevas",
+    "title": "Every seva in one place",
+    "body": "Annadaan, the Kovai Chandra temple, Gau Seva, Vidya Daan and Vaishnav Bhojan, with the temple's real tiers.",
+    "say": "Donations and sevas use the temple's real offerings: Annadaan, the new Kovai Chandra temple, Gau Seva, Vidya Daan and Vaishnav Bhojan. The production app adds UPI payment and automatic eighty G receipts."
+  },
+  {
+    "id": "10",
+    "image": "11-sangha.jpg",
+    "eyebrow": "Sangha",
+    "title": "Micro-communities",
+    "body": "Circles like the Japa Sunrise Club, Kirtan Mandali and Seva Tech Guild, plus find-a-devotee-by-skill.",
+    "say": "Sangha brings micro-communities inside the larger temple family: the Japa Sunrise Club, the Kirtan Mandali, the Gita circle and more. Anyone can find devotees by skill and reach out through chat."
+  },
+  {
+    "id": "11",
+    "image": "12-rewards.jpg",
+    "eyebrow": "Credits & rewards",
+    "title": "Recognition that inspires",
+    "body": "Redeem credits for laddu prasadam, Govinda's thali, archana, Gita books and priority festival darshan.",
+    "say": "Visits, programmes, japa, Gita and verified seva earn credits. Devotees redeem them for prasadam, a Govinda's thali, an archana in their name, books, and priority darshan passes at big festivals."
+  },
+  {
+    "id": "12",
+    "image": "14-admin.jpg",
+    "eyebrow": "Temple console",
+    "title": "See the community grow",
+    "body": "Active devotees, check-ins, seva hours, the visitor-to-devotee funnel and festival staffing at a glance.",
+    "say": "Temple administrators get a console showing active devotees, check-ins, seva hours, and the funnel from first visit to weekly regular, plus how well each festival is staffed."
+  },
+  {
+    "id": "13",
+    "image": "15-admin-contacts.jpg",
+    "eyebrow": "Privacy by design",
+    "title": "Contacts for admins only",
+    "body": "Only temple admins can see phone numbers and emails; the database enforces it. Masked in this public demo.",
+    "say": "Only admins can see contact details, and in production the database itself enforces this. In this public demo the numbers are masked."
+  },
+  {
+    "id": "14",
+    "eyebrow": "The plan",
+    "title": "Launch at Gaura Purnima 2027",
+    "body": "Design from November, MVP by January, closed beta in February, public launch in March. Noor builds it as seva, at no development charge.",
+    "say": "The plan: design starts this November, the first version is built by the end of January, fifty core volunteers test it in February, and Saathi launches publicly around Gaura Purnima in March twenty twenty-seven. Noor is developing Saathi as seva, with no development fee. Funding is needed only for the designer and the running costs. Hare Krishna."
+  }
+]

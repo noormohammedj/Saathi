@@ -1,0 +1,14 @@
+node_modules/
+.expo/
+dist/
+.next/
+out/
+ios/
+android/
+*.log
+.env*
+!.env.example
+.DS_Store
+pages-dist/
+apps/mobile/dist-web/
+apps/web/out/
