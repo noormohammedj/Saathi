@@ -16,5 +16,13 @@ if [ -d media ]; then
   mkdir -p pages-dist/media
   cp media/*.mp4 media/*.jpg pages-dist/media/ 2>/dev/null || true
 fi
+# GitHub Pages only serves the root 404.html, so send unknown /app/* deep links
+# back to the app entry, which restores the route from saved state.
+python3 - <<'EOF'
+p = "pages-dist/404.html"
+html = open(p).read()
+redirect = "<script>if(location.pathname.indexOf('/Saathi/app/')===0)location.replace('/Saathi/app/');</script>"
+open(p, "w").write(html.replace("<head>", "<head>" + redirect, 1))
+EOF
 touch pages-dist/.nojekyll
 echo "Pages site ready in pages-dist/"
